@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include <catch.hpp>
+#include <thread>
+#include <future>
 using namespace std;
 
 class Apple : public Singleton<Apple>
@@ -46,12 +48,21 @@ protected:
 
 TEST_CASE("Singleton")
 {
-    Apple::Get_Instance().show();
-    cout << &Apple::Get_Instance() << endl;
-    Apple::Get_Instance().show();
-    cout << &Apple::Get_Instance() << endl;
+    SECTION("one thread test"){
+        Apple::Get_Instance().show();
+        cout << &Apple::Get_Instance() << endl;
+        Apple::Get_Instance().show();
+        cout << &Apple::Get_Instance() << endl;
 
-    Orange::Get_Instance().show();
-    Orange::Get_Instance().show();
-    Orange::Get_Instance().show();
+        Orange::Get_Instance().show();
+        Orange::Get_Instance().show();
+        Orange::Get_Instance().show();
+    }
+    
+    SECTION("multi thread test"){
+        for(int i = 0; i<4; i++) {
+            async([](){cout << &Apple::Get_Instance() << endl;});
+        }
+    }
+    
 }
