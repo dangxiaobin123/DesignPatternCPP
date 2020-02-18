@@ -19,4 +19,5 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/run)
 include_directories(${PROJECT_SOURCE_DIR})
 
 add_subdirectory(thirdparty/catch2)
+add_subdirectory(thirdparty/nanolog)
 add_subdirectory(src)
