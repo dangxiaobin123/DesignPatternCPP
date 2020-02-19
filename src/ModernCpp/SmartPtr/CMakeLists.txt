@@ -1,0 +1,8 @@
+get_filename_component(tarName ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+project(${tarName})
+set(CMAKE_CXX_STANDARD 17)
+aux_source_directory(. SRC)
+file(GLOB_RECURSE HEADERS *.h *.hpp)
+add_executable(${tarName} ${SRC} ${HEADERS})
+target_link_libraries(${PROJECT_NAME} PRIVATE catch)
+set_target_properties(${tarName} PROPERTIES FOLDER "DesignPattern")

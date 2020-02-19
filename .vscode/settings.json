@@ -72,6 +72,9 @@
         "typeinfo": "cpp",
         "unordered_map": "cpp",
         "utility": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "queue": "cpp",
+        "__memory": "cpp",
+        "filesystem": "cpp"
     }
 }
