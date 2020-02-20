@@ -20,5 +20,6 @@ include_directories(${PROJECT_SOURCE_DIR})
 
 add_subdirectory(thirdparty/catch2)
 add_subdirectory(thirdparty/nanolog)
+add_subdirectory(thirdparty/Logger)
 add_subdirectory(src/Pattern)
 add_subdirectory(src/ModernCpp)
